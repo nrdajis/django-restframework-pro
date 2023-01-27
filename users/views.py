@@ -8,7 +8,6 @@ class Jobs(APIView):
     """
 
     def get(self, request, format=None):
-        print(request.query_params.get("id"))
         if request.query_params.get("error") == "400":
             return Response({"error": "Bad Request"}, status=status.HTTP_400_BAD_REQUEST)
         elif request.query_params.get("error") == "500":
